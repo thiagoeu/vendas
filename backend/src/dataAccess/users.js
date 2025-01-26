@@ -7,7 +7,15 @@ const collectionName = "users";
 export default class UsersDataAcess {
   async getUsers() {
     const result = await Mongo.db.collection(collectionName).find({}).toArray();
-    console.log(result);
+
+    return result;
+  }
+
+  async deleteUser(userId) {
+    const result = await Mongo.db
+      .collection(collectionName)
+      .findOneAndDelete({ _id: new ObjectId(userId) });
+
     return result;
   }
 }
