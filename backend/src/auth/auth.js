@@ -138,7 +138,7 @@ authRouter.post("/login", (req, res) => {
         success: false,
         statusCode: 500,
         body: {
-          text: "Error during authentication",
+          text: "authentication Error",
           error,
         },
       });
@@ -149,7 +149,7 @@ authRouter.post("/login", (req, res) => {
         success: false,
         statusCode: 400,
         body: {
-          text: "Credentials are not correct",
+          text: "Credentials incorrect",
         },
       });
     }
